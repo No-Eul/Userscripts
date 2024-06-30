@@ -1,0 +1,61 @@
+// ==UserScript==
+// @name         Storable Convar
+// @namespace    https://github.com/No-Eul/Userscripts
+// @version      1.0
+// @description  Save and automatically apply the options what you set in Diep.io console.
+// @author       NoEul
+// @license      MIT License - https://github.com/No-Eul/Userscripts/blob/StorableConvar/LICENSE.txt
+// @source       https://github.com/No-Eul/Userscripts/tree/StorableConvar
+// @supportURL   https://github.com/No-Eul/Userscripts/issues
+// @updateURL    https://github.com/No-Eul/Userscripts/raw/StorableConvar/StorableConvar.user.js
+// @downloadURL  https://github.com/No-Eul/Userscripts/raw/StorableConvar/StorableConvar.user.js
+// @match        *://diep.io/*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=diep.io
+// @grant        GM_setValue
+// @grant        GM_getValue
+// @grant        GM_listValues
+// @grant        GM_deleteValue
+// ==/UserScript==
+
+function getInputObject() {
+	return new Promise(resolve => {
+		if (unsafeWindow.input) resolve(unsafeWindow.input);
+
+		let interval = setInterval(() => {
+			if (unsafeWindow.input) {
+				clearInterval(interval);
+				resolve(unsafeWindow.input);
+			}
+		});
+	});
+}
+
+function modifyStoringConvar() {
+	document.getElementById("textInput")
+		.addEventListener("change", event => {
+			let pair = event.target.value.split(/\s+/g);
+			if (unsafeWindow.input.get_convar(pair[0]))
+				GM_setValue(pair[0], pair[1]);
+		});
+
+	let set_convar = unsafeWindow.input.set_convar;
+	unsafeWindow.input.set_convar = function (key, value) {
+		if (unsafeWindow.input.get_convar(key))
+			GM_setValue(key, value);
+		set_convar.apply(unsafeWindow.input, arguments);
+	};
+
+	let execute = unsafeWindow.input.execute;
+	unsafeWindow.input.execute = function (command) {
+		let pair = command.split(/\s+/g);
+		if (unsafeWindow.input.get_convar(pair[0]))
+			GM_setValue(pair[0], pair[1]);
+		execute.apply(unsafeWindow.input, arguments);
+	};
+}
+
+(function init() {
+	getInputObject()
+		.then(modifyStoringConvar)
+		.then(() => GM_listValues().forEach(key => unsafeWindow.input.set_convar(key, GM_getValue(key))));
+})();

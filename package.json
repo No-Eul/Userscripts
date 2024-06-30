@@ -1,0 +1,13 @@
+{
+	"name": "storable-convar",
+	"version": "1.0",
+	"description": "Save and automatically apply the options what you set in Diep.io console.",
+	"author": "NoEul",
+	"license": "MIT",
+	"private": true,
+	"dependencies": {
+		"@types/tampermonkey": "^5.0.3"
+	},
+	"scripts": {
+	}
+}
