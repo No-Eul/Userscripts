@@ -1,0 +1,13 @@
+{
+	"name": "coupang-partners-blocker",
+	"version": "1.0.3",
+	"description": "Don't go to the Coupang website on a Newspic post, just view it!",
+	"author": "NoEul",
+	"license": "MIT",
+	"private": true,
+	"dependencies": {
+		"@types/tampermonkey": "^5.0.3"
+	},
+	"scripts": {
+	}
+}
