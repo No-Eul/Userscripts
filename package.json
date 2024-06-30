@@ -1,0 +1,13 @@
+{
+	"name": "crosshair-cursor",
+	"version": "1.0",
+	"description": "Change the default cursor to crosshair in Diep.io",
+	"author": "NoEul",
+	"license": "MIT",
+	"private": true,
+	"dependencies": {
+		"@types/tampermonkey": "^5.0.3"
+	},
+	"scripts": {
+	}
+}
