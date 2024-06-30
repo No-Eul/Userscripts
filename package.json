@@ -1,0 +1,13 @@
+{
+	"name": "template",
+	"version": "1.0",
+	"description": "An Userscript Project Template",
+	"author": "NoEul",
+	"license": "MIT",
+	"private": true,
+	"dependencies": {
+		"@types/tampermonkey": "^5.0.3"
+	},
+	"scripts": {
+	}
+}
