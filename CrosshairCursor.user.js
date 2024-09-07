@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Crosshair Cursor
 // @namespace    https://github.com/No-Eul/Userscripts
-// @version      1.0
+// @version      1.0.1
 // @description  Change the default cursor to crosshair in Diep.io
 // @author       NoEul
 // @license      MIT License - https://github.com/No-Eul/Userscripts/blob/CrosshairCursor/LICENSE.txt
@@ -14,11 +14,11 @@
 // ==/UserScript==
 
 (() => {
-	let canvas = document.getElementById("canvas");
-	canvas.style.setProperty("cursor", "crosshair");
+	let app = document.getElementById("app");
+	app.style.setProperty("cursor", "crosshair");
 	let observer = new MutationObserver(mutations => {
-		if (canvas.style.getPropertyValue("cursor") === "default")
-			canvas.style.setProperty("cursor", "crosshair");
+		if (app.style.getPropertyValue("cursor") === "default")
+			app.style.setProperty("cursor", "crosshair");
 	});
-	observer.observe(canvas, { attributes: true, attributeFilter: ["style"] });
+	observer.observe(app, { attributes: true, attributeFilter: ["style"] });
 })();
