@@ -17,7 +17,7 @@
 	const canvas = document.createElement("canvas");
 	canvas.id = "viewbox-indicator";
 	[canvas.width, canvas.height] = [window.innerWidth, window.innerHeight];
-	[canvas.style.position, canvas.style.inset, canvas.style.pointerEvents] = ["absolute", "0", "none"];
+	[canvas.style.position, canvas.style.inset, canvas.style.pointerEvents, canvas.style.zIndex] = ["absolute", "0", "none", "1"];
 	document.getElementById("canvas").after(canvas);
 
 	let context = canvas.getContext("2d");
