@@ -7,8 +7,8 @@
 // @license      MIT License - https://github.com/No-Eul/Userscripts/blob/ViewBoxIndicator/LICENSE.txt
 // @source       https://github.com/No-Eul/Userscripts/tree/ViewBoxIndicator
 // @supportURL   https://github.com/No-Eul/Userscripts/issues
-// @updateURL    https://github.com/No-Eul/Userscripts/raw/ViewBoxIndicator/ViewBoxIndicator.user.js
-// @downloadURL  https://github.com/No-Eul/Userscripts/raw/ViewBoxIndicator/ViewBoxIndicator.user.js
+// @updateURL    https://github.com/No-Eul/Userscripts/raw/refs/heads/ViewBoxIndicator/ViewboxIndicator.user.js
+// @downloadURL  https://github.com/No-Eul/Userscripts/raw/refs/heads/ViewBoxIndicator/ViewboxIndicator.user.js
 // @match        *://diep.io/*
 // @icon         https://www.google.com/s2/favicons?sz=256&domain=diep.io
 // ==/UserScript==
