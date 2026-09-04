@@ -10,7 +10,7 @@
 // @updateURL    https://github.com/No-Eul/Userscripts/raw/ViewBoxIndicator/ViewBoxIndicator.user.js
 // @downloadURL  https://github.com/No-Eul/Userscripts/raw/ViewBoxIndicator/ViewBoxIndicator.user.js
 // @match        *://diep.io/*
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=diep.io
+// @icon         https://www.google.com/s2/favicons?sz=256&domain=diep.io
 // ==/UserScript==
 
 (() => {
