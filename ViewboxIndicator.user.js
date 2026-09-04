@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ViewBox Indicator
 // @namespace    https://github.com/No-Eul/Userscripts
-// @version      1.0
+// @version      1.0.1
 // @description  Show regular tank view box in a tech tree of Sniper or Smasher which have a larger view box.
 // @author       NoEul
 // @license      MIT License - https://github.com/No-Eul/Userscripts/blob/ViewBoxIndicator/LICENSE.txt
@@ -21,13 +21,13 @@
 	document.getElementById("canvas").after(canvas);
 
 	let context = canvas.getContext("2d");
+	let range = 0;
 
 	window.addEventListener("resize", () => {
 		[canvas.width, canvas.height] = [window.innerWidth, window.innerHeight];
-		draw(context);
+		draw(context, range);
 	});
 
-	let range = 0;
 	window.addEventListener("keydown", event => {
 		if (event.code === "KeyZ" && !event.repeat) {
 			range = ++range % 5;
